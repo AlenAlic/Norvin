@@ -1,0 +1,16 @@
+$primary-color: rgb(255, 163, 0);
+$primary-color-dark: rgb(255, 130, 0);
+$personal-trainer-color: #000;
+$salsa-trainer-color: #fff;
+
+@mixin easeOut {
+  transition: all 0.75s ease-out;
+}
+
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return $personal-trainer-color;
+  } @else {
+    @return $salsa-trainer-color;
+  }
+}

@@ -1,6 +1,24 @@
-$primary-color: rgb(85, 68, 68);
+@import "config";
+@import "button";
 
 body {
-  background: $primary-color;
-  color: #fff;
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.2;
+  align-content: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@import "home";
+.salsa-page {
+  background: $salsa-trainer-color;
+  color: set-text-color($salsa-trainer-color);
+}
+.personal-trainer-page {
+  background: $personal-trainer-color;
+  color: set-text-color($personal-trainer-color);
 }
