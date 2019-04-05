@@ -14,11 +14,11 @@
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
-    background: $personal-trainer-color;
+    background: black;
     @include easeOut;
 
     &.white {
-      background: $salsa-trainer-color !important;
+      background: white !important;
     }
   }
 
@@ -41,6 +41,9 @@
       &:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
       }
+
+      // White background
+      background: white !important;
     }
   }
 }
@@ -50,7 +53,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0.95;
+  opacity: 0.94;
   visibility: hidden;
 
   &.show {
@@ -121,11 +124,11 @@
   .nav-link {
     display: inline-block;
     position: relative;
-    font-size: 30px;
+    font-size: 24px;
     text-transform: uppercase;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     font-weight: 300;
-    color: $personal-trainer-color;
+    color: white;
     text-decoration: none;
     @include easeOut;
 

@@ -12,24 +12,26 @@
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
-    background: #000;
+    background: black;
     transition: all 0.3s ease-out; }
     .menu-btn .btn-line.white {
-      background: #fff !important; }
+      background: white !important; }
   .menu-btn.close {
     transform: rotate(180deg); }
-    .menu-btn.close .btn-line:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px); }
-    .menu-btn.close .btn-line:nth-child(2) {
-      opacity: 0; }
-    .menu-btn.close .btn-line:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -6px); }
+    .menu-btn.close .btn-line {
+      background: white !important; }
+      .menu-btn.close .btn-line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px); }
+      .menu-btn.close .btn-line:nth-child(2) {
+        opacity: 0; }
+      .menu-btn.close .btn-line:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px); }
 
 .menu {
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0.95;
+  opacity: 0.94;
   visibility: hidden; }
   .menu.show {
     visibility: visible; }
@@ -45,14 +47,14 @@
   .menu-nav {
     margin: 0;
     padding: 0;
-    background: #f09900;
+    background: #f15d17;
     list-style: none;
     transform: translate3d(0, -100%, 0);
     transition: all 0.3s ease-out; }
     .menu-nav.show {
       transform: translate3d(0, 0, 0); }
   .menu-branding {
-    background: #ffa300;
+    background: #f26725;
     transform: translate3d(0, 100%, 0);
     transition: all 0.3s ease-out; }
     .menu-branding.show {
@@ -74,11 +76,11 @@
   .menu .nav-link {
     display: inline-block;
     position: relative;
-    font-size: 30px;
+    font-size: 24px;
     text-transform: uppercase;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     font-weight: 300;
-    color: #000;
+    color: white;
     text-decoration: none;
     transition: all 0.3s ease-out; }
     .menu .nav-link.white {
@@ -167,6 +169,11 @@ body {
 * {
   box-sizing: border-box; }
 
+h1,
+h2 {
+  text-transform: uppercase;
+  font-weight: 500; }
+
 .home-container {
   width: 100%;
   height: 100%;
@@ -197,8 +204,8 @@ body {
 
 .home-page-btn {
   color: #fff;
-  background-color: #ffa300;
-  border-color: #ffa300;
+  background-color: #f26725;
+  border-color: #f26725;
   width: 100%;
   font-size: 2rem;
   line-height: 1;
@@ -208,8 +215,8 @@ body {
 
 .home-page-btn:hover {
   color: #fff;
-  background-color: #ff8200;
-  border-color: #ff8200; }
+  background-color: #f58f00;
+  border-color: #f58f00; }
 
 .home-page-logo {
   position: absolute;
@@ -336,8 +343,8 @@ body {
 
 .salsa-page {
   background: #fff;
-  color: #000; }
+  color: black; }
 
 .personal-trainer-page {
   background: #000;
-  color: #fff; }
+  color: white; }

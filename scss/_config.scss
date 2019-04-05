@@ -1,5 +1,5 @@
-$primary-color: rgb(255, 163, 0);
-$primary-color-dark: rgb(255, 130, 0);
+$primary-color: rgb(242, 103, 37);
+$primary-color-dark: rgb(245, 143, 0);
 $secondary-color: #eece1a;
 $personal-trainer-color: #000;
 $salsa-trainer-color: #fff;
@@ -10,9 +10,9 @@ $salsa-trainer-color: #fff;
 
 @function set-text-color($color) {
   @if (lightness($color) > 40) {
-    @return $personal-trainer-color;
+    @return black;
   } @else {
-    @return $salsa-trainer-color;
+    @return white;
   }
 }
 
