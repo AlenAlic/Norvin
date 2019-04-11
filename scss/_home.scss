@@ -35,13 +35,14 @@
 .home-page-btn {
   color: #fff;
   background-color: $primary-color;
-  border-color: $primary-color;
+  // border-color: white;
+  box-shadow: 1px 1px white;
   width: 100%;
   font-size: 2rem;
   line-height: 1;
   font-weight: 400;
   display: block;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 .home-page-btn:hover {
   color: #fff;

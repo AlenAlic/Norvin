@@ -117,7 +117,7 @@
     }
 
     &.current > a {
-      color: $secondary-color;
+      color: $secondary-color !important;
     }
   }
 
@@ -142,9 +142,9 @@
   }
 }
 
-// Delay each nav item slide by 0.1s
-@for $x from 1 through 8 {
+// Delay each nav item slide by 0.05s
+@for $x from 1 through 9 {
   .nav-item:nth-child(#{$x}) {
-    transition-delay: $x * 0.1s;
+    transition-delay: $x * 0.02s;
   }
 }
