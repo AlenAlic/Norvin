@@ -1,31 +1,144 @@
 @import "config";
 @import "menu";
 @import "button";
+@import "faded";
 @import "mobile";
 
+html {
+  scroll-behavior: smooth;
+  min-height: 100vh;
+}
+
 body {
-  height: 100%;
+  height: 100vh;
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.2;
   align-content: center;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 * {
   box-sizing: border-box;
 }
+
 h1,
 h2 {
   text-transform: uppercase;
   font-weight: 500;
 }
 
-@import "home";
-.salsa-page {
-  background: $salsa-trainer-color;
-  color: set-text-color($salsa-trainer-color);
-}
-.personal-trainer-page {
+header {
+  position: fixed;
+  height: $menu-height;
+  width: 100%;
   background: $personal-trainer-color;
-  color: set-text-color($personal-trainer-color);
+
+  &.white {
+    background: $salsa-trainer-color;
+  }
+}
+
+main {
+  padding-top: $menu-height;
+}
+
+footer {
+  min-height: 10vh;
+  height: auto;
+}
+
+.anchor:before {
+  display: block;
+  content: " ";
+  margin-top: -75px;
+  height: 75px;
+  visibility: hidden;
+}
+
+@import "home";
+
+.salsa-trainer {
+  &-page {
+    background: $salsa-trainer-color;
+    color: set-text-color($salsa-trainer-color);
+  }
+}
+.personal-trainer {
+  &-page {
+    background: $personal-trainer-color;
+    color: set-text-color($personal-trainer-color);
+  }
+}
+
+.personal-trainer,
+.salsa-trainer {
+  &-home {
+    text-align: center;
+  }
+
+  &-home-banner {
+    img {
+      position: relative;
+      z-index: -1;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.salsa {
+  &-img-page {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+
+    img {
+      max-width: 100%;
+    }
+
+    &.right {
+      grid-template-columns: 70% 30%;
+    }
+  }
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: auto;
+  justify-items: center;
+
+  .mail,
+  .phone {
+    margin-top: 25vh;
+    font-size: 3rem;
+    a {
+      display: flex;
+      flex-direction: column;
+      justify-self: center;
+      text-align: center;
+      flex-wrap: wrap;
+
+      text-decoration: none;
+      color: set-text-color($personal-trainer-color);
+
+      &.white {
+        color: set-text-color($salsa-trainer-color);
+      }
+
+      i {
+        margin-bottom: 1rem;
+        font-size: 12rem;
+      }
+
+      &:hover {
+        @include easeOut;
+        color: $primary-color;
+      }
+    }
+  }
 }

@@ -5,29 +5,54 @@ const menuNav = document.querySelector(".menu-nav");
 const menuBranding = document.querySelector(".menu-branding");
 const navItems = document.querySelectorAll(".nav-item");
 
-// Initial menu state
+// Menu Toggle
 let showMenu = false;
-menuBtn.addEventListener("click", toggleMenu);
+const openMenu = () => {
+  menuBtn.classList.add("close");
+  menuNav.classList.add("show");
+  showMenu = true;
+};
+const closeMenu = () => {
+  menuBtn.classList.remove("close");
+  menuNav.classList.remove("show");
+  showMenu = false;
+};
 
-function toggleMenu() {
+const toggleMenu = () => {
   if (!showMenu) {
-    menuBtn.classList.add("close");
-    menu.classList.add("show");
-    menuNav.classList.add("show");
-    menuBranding.classList.add("show");
-    navItems.forEach(item => item.classList.add("show"));
-
-    // Set menu state
-    // showMenu = true;
+    openMenu();
   } else {
-    menuBtn.classList.remove("close");
-    menu.classList.remove("show");
-    menuNav.classList.remove("show");
-    menuBranding.classList.remove("show");
-    navItems.forEach(item => item.classList.remove("show"));
-
-    // Set set menu state
-    // showMenu = false;
+    closeMenu();
   }
-  showMenu = !showMenu;
-}
+};
+menuBtn.addEventListener("click", toggleMenu);
+navItems.forEach(item => item.addEventListener("click", closeMenu));
+
+// Menu Navigation
+var section = document.querySelectorAll(".anchor");
+var sections = {};
+var i = 0;
+
+Array.prototype.forEach.call(section, function(e) {
+  sections[e.id] = e.offsetTop;
+});
+
+window.onscroll = function() {
+  var scrollPosition =
+    document.documentElement.scrollTop || document.body.scrollTop;
+
+  for (i in sections) {
+    if (sections[i] <= scrollPosition) {
+      document.querySelector(".current").classList.remove("current");
+      document.querySelector("a[href*=" + i + "]").classList.add("current");
+    }
+  }
+};
+// const changeSectionIndicator = e => {
+//   navItems.forEach(item => item.classList.remove("current"));
+//   e.currentTarget.classList.add("current");
+// };
+
+// navItems.forEach(item =>
+//   item.addEventListener("click", changeSectionIndicator)
+// );
