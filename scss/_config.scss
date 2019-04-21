@@ -45,3 +45,9 @@ $ease-duration: 0.3s;
     @content;
   }
 }
+
+@mixin mediaXxl {
+  @media screen and (min-width: 1300px) {
+    @content;
+  }
+}

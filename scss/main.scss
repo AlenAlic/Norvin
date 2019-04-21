@@ -2,7 +2,6 @@
 @import "menu";
 @import "button";
 @import "faded";
-@import "mobile";
 
 html {
   scroll-behavior: smooth;
@@ -92,30 +91,24 @@ footer {
 
 .salsa {
   &-img-page {
-    display: grid;
-    grid-template-columns: 30% 70%;
     align-items: center;
 
     img {
-      max-width: 100%;
-    }
-
-    &.right {
-      grid-template-columns: 70% 30%;
+      max-height: 60vh;
     }
   }
 }
 
 .contact {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-column-gap: auto;
   justify-items: center;
+  font-size: 1.3rem;
 
   .mail,
   .phone {
-    margin-top: 25vh;
-    font-size: 3rem;
+    margin-top: 13vh;
     a {
       display: flex;
       flex-direction: column;
@@ -132,13 +125,21 @@ footer {
 
       i {
         margin-bottom: 1rem;
-        font-size: 12rem;
+        font-size: 5rem;
       }
 
       &:hover {
         @include easeOut;
         color: $primary-color;
       }
+
+      &.salsa {
+        &:hover {
+          color: $primary-color-salsa;
+        }
+      }
     }
   }
 }
+
+@import "mobile";
