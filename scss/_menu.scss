@@ -1,49 +1,42 @@
-.menu-container {
-  height: 80px;
-}
+@import "config";
+
+$base-unit: 12px;
+$menu-height: $base-unit * 6;
 
 .menu-btn {
   position: absolute;
-  z-index: 3;
-  right: 35px;
-  top: 35px;
+  z-index: 100;
+  right: $base-unit * 2;
+  top: $base-unit * 2;
   cursor: pointer;
   @include easeOut;
 
   .btn-line {
-    width: 28px;
+    width: 30px;
     height: 3px;
     margin: 0 0 5px 0;
     background: black;
     @include easeOut;
 
     &.white {
-      background: white !important;
+      background: white;
     }
   }
 
-  // Rotate Into X With Menu Lines
   &.close {
     transform: rotate(180deg);
 
     .btn-line {
-      // Line 1 - Rotate
       &:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+        transform: rotate(45deg) translate(8px, 8px);
       }
-
-      // Line 2 - Hide
       &:nth-child(2) {
         opacity: 0;
       }
-
-      // Line 3 - Rotate
       &:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
+        transform: rotate(-45deg) translate(4px, -3px);
       }
-
-      // White background
-      background: white !important;
+      // background: white !important;
     }
   }
 }
@@ -51,100 +44,168 @@
 // Menu Overlay
 .menu {
   position: fixed;
-  top: 0;
   width: 100%;
-  opacity: 0.94;
-  visibility: hidden;
+  display: grid;
+  grid-template-rows: $menu-height auto;
 
-  &.show {
-    visibility: visible;
-  }
-
-  &-branding,
-  &-nav {
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    justify-content: center;
-    float: left;
-    width: 50%;
-    height: 100vh;
-    overflow: hidden;
+  &:first-child {
+    background: $personal-trainer-color;
   }
 
   &-nav {
-    margin: 0;
-    padding: 0;
-    background: darken($primary-color, 3);
-    list-style: none;
-    transform: translate3d(0, -100%, 0);
-    @include easeOut;
-
-    &.show {
-      // Slide in from top
-      transform: translate3d(0, 0, 0);
-    }
-  }
-
-  // Branding Side
-  &-branding {
-    background: $primary-color;
-    transform: translate3d(0, 100%, 0);
-    @include easeOut;
-
-    &.show {
-      // Slide in from bottom
-      transform: translate3d(0, 0, 0);
-    }
-
-    .portrait {
-      width: 250px;
-      height: 250px;
-      background: url("../img/portrait.jpg");
-      border-radius: 50%;
-      border: solid 3px $secondary-color;
-      background-size: contain;
-    }
-  }
-
-  .nav-item {
-    transform: translate3d(600px, 0, 0);
-    @include easeOut;
-
-    &.show {
-      // Slide in from right
-      transform: translate3d(0, 0, 0);
-    }
-
-    &.current > a {
-      color: $secondary-color !important;
-    }
-  }
-
-  .nav-link {
-    display: inline-block;
+    z-index: -1;
     position: relative;
-    font-size: 24px;
-    text-transform: uppercase;
-    padding: 0.5rem 0;
-    font-weight: 300;
-    color: white;
-    text-decoration: none;
-    @include easeOut;
+    height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+    transform: translate3d(0, -600px, 0);
+    @include easeIn;
+    background: none;
+    box-shadow: none;
+
+    .nav-link {
+      text-decoration: none;
+      color: set-text-color($personal-trainer-color);
+
+      &.white {
+        color: set-text-color($salsa-trainer-color);
+      }
+    }
+
+    &.show {
+      height: auto;
+      transform: translate3d(0, 0, 0);
+      background: $personal-trainer-color;
+      @include easeOut;
+      box-shadow: 0px 3px 15px 0px $primary-color;
+
+      &.white {
+        background: $salsa-trainer-color;
+      }
+    }
+
+    .nav-item {
+      position: relative;
+      margin: $base-unit/3 $base-unit;
+      text-transform: uppercase;
+      font-weight: 700;
+      text-align: center;
+      width: 100%;
+      font-size: 0.9rem;
+
+      &.current,
+      &:hover {
+        .nav-item-text {
+          &:after {
+            content: "";
+            display: block;
+            width: 20%;
+            height: 4px;
+            margin-top: $base-unit/2;
+            margin-left: 40%;
+            background-color: $primary-color;
+            @include easeOut;
+          }
+
+          &.salsa {
+            &:after {
+              background-color: $primary-color-salsa;
+            }
+          }
+        }
+      }
+
+      .nav-item-text {
+        background-color: $personal-trainer-color;
+        &.salsa {
+          background-color: $salsa-trainer-color;
+        }
+        &:after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 4px;
+          margin-top: $base-unit/2;
+          margin-left: 40%;
+
+          @include easeOut;
+        }
+      }
+    }
+  }
+
+  &-branding {
+    background: $personal-trainer-color;
 
     &.white {
-      color: $salsa-trainer-color !important;
+      background: $salsa-trainer-color;
     }
 
-    &:hover {
-      color: $secondary-color;
+    .logo {
+      height: $menu-height * 0.6;
+      margin-top: $menu-height * 0.2;
+      margin-bottom: $menu-height * 0.2;
+      margin-left: $menu-height * 0.4;
     }
   }
 }
 
-// Delay each nav item slide by 0.05s
-@for $x from 1 through 9 {
-  .nav-item:nth-child(#{$x}) {
-    transition-delay: $x * 0.02s;
+@include mediaXl {
+  .menu-btn {
+    display: none;
+  }
+  .menu {
+    height: $menu-height;
+    display: grid;
+    grid-template-columns: 240px auto;
+    align-items: center;
+    align-content: center;
+
+    &-nav {
+      position: relative;
+      transform: translate3d(0, 0, 0);
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      box-shadow: none;
+      background: $personal-trainer-color;
+
+      &.white {
+        background: $salsa-trainer-color;
+      }
+
+      &.show {
+        box-shadow: none;
+      }
+
+      .nav-item {
+        margin: 0 $base-unit;
+        width: auto;
+
+        &:last-child {
+          margin-right: $base-unit * 2;
+        }
+
+        &.current,
+        &:hover {
+          .nav-item-text {
+            &:after {
+              width: 80%;
+              margin-left: 0;
+            }
+          }
+        }
+
+        .nav-item-text {
+          &:after {
+            margin-left: 0;
+          }
+        }
+      }
+    }
   }
 }

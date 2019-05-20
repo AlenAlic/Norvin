@@ -1,40 +1,95 @@
+$padding-unit: 24px;
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $padding-unit;
+  padding-right: $padding-unit;
+}
+
+@include mediaXl {
+  .container {
+    max-width: 1000px;
+  }
+
+  .salsa {
+    &-img-page {
+      display: grid;
+      grid-template-columns: 30% 70%;
+      align-items: center;
+
+      img {
+        max-width: 100%;
+      }
+
+      &.right {
+        grid-template-columns: 70% 30%;
+      }
+    }
+  }
+
+  .contact {
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 3rem;
+
+    .mail,
+    .phone {
+      margin-top: 25vh;
+      a {
+        i {
+          font-size: 12rem;
+        }
+      }
+    }
+  }
+}
+
+@include mediaXxl {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@include mediaLg {
+  .container {
+    max-width: 90vw;
+  }
+
+  .contact {
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 2rem;
+
+    .mail,
+    .phone {
+      margin-top: 20vh;
+      a {
+        i {
+          font-size: 9rem;
+        }
+      }
+    }
+  }
+}
+
 @include mediaMd {
-  main {
-    align-items: center;
-    text-align: center;
-
-    .lg-heading {
-      line-height: 1;
-      padding-bottom: 1rem;
-    }
+  .container {
+    max-width: 100%;
+    padding-left: $padding-unit;
+    padding-right: $padding-unit;
   }
 
-  ul.menu-nav,
-  div.menu-branding {
-    float: none;
-    width: 100%;
-    min-height: 0;
+  .contact {
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 1.5rem;
 
-    &.show {
-      transform: translate3d(0, 0, 0);
-    }
-  }
-
-  .menu-nav {
-    height: 75vh;
-    transform: translate3d(-100%, 0, 0);
-    font-size: 24px;
-  }
-
-  .menu-branding {
-    height: auto;
-    transform: translate3d(100%, 0, 0);
-
-    .portrait {
-      width: 120px;
-      height: 120px;
-      margin-top: 30px;
-      margin-bottom: 30px;
+    .mail,
+    .phone {
+      margin-top: 20vh;
+      a {
+        i {
+          font-size: 6rem;
+        }
+      }
     }
   }
 }
