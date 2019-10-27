@@ -42,6 +42,18 @@ $padding-unit: 24px;
       }
     }
   }
+
+  footer {
+    margin-top: 5rem;
+    text-align: start;
+    .footer-content {
+      .footer-flex {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+    }
+  }
 }
 
 @include mediaXxl {
@@ -69,6 +81,18 @@ $padding-unit: 24px;
       }
     }
   }
+
+  footer {
+    margin-top: 5rem;
+    text-align: start;
+    .footer-content {
+      .footer-flex {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+    }
+  }
 }
 
 @include mediaMd {
@@ -89,6 +113,18 @@ $padding-unit: 24px;
         i {
           font-size: 6rem;
         }
+      }
+    }
+  }
+
+  footer {
+    margin-top: 5rem;
+    text-align: start;
+    .footer-content {
+      .footer-flex {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
       }
     }
   }

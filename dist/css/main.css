@@ -295,15 +295,16 @@ main {
 footer {
   min-height: 10vh;
   height: auto;
-  margin-top: 5rem; }
+  margin-top: 2rem;
+  text-align: center; }
   footer .footer-content {
     border-top: 1px solid #f26725;
     height: auto;
-    padding-top: 2rem;
-    margin-bottom: 5rem; }
+    padding-top: 1rem;
+    margin-bottom: 3rem; }
     footer .footer-content .footer-flex {
-      display: flex;
-      justify-content: space-around; }
+      display: block;
+      align-items: stretch; }
       footer .footer-content .footer-flex h3,
       footer .footer-content .footer-flex h4,
       footer .footer-content .footer-flex h5 {
@@ -311,7 +312,7 @@ footer {
         margin-bottom: 0.25rem; }
   footer .menu-list,
   footer .menu-title {
-    padding: 0 3rem; }
+    padding: 0 2rem; }
   footer .menu-list div {
     margin: 0.75rem 0; }
     footer .menu-list div a {
@@ -635,7 +636,14 @@ a {
       margin-top: 25vh; }
       .contact .mail a i,
       .contact .phone a i {
-        font-size: 10rem; } }
+        font-size: 10rem; }
+  footer {
+    margin-top: 5rem;
+    text-align: start; }
+    footer .footer-content .footer-flex {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap; } }
 
 @media screen and (min-width: 1300px) {
   .container {
@@ -652,7 +660,14 @@ a {
       margin-top: 20vh; }
       .contact .mail a i,
       .contact .phone a i {
-        font-size: 9rem; } }
+        font-size: 9rem; }
+  footer {
+    margin-top: 5rem;
+    text-align: start; }
+    footer .footer-content .footer-flex {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap; } }
 
 @media screen and (min-width: 501px) and (max-width: 768px) {
   .container {
@@ -667,4 +682,11 @@ a {
       margin-top: 20vh; }
       .contact .mail a i,
       .contact .phone a i {
-        font-size: 6rem; } }
+        font-size: 6rem; }
+  footer {
+    margin-top: 5rem;
+    text-align: start; }
+    footer .footer-content .footer-flex {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap; } }

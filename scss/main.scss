@@ -50,15 +50,16 @@ main {
 footer {
   min-height: 10vh;
   height: auto;
-  margin-top: 5rem;
+  margin-top: 2rem;
+  text-align: center;
   .footer-content {
     border-top: 1px solid $primary-color;
     height: auto;
-    padding-top: 2rem;
-    margin-bottom: 5rem;
+    padding-top: 1rem;
+    margin-bottom: 3rem;
     .footer-flex {
-      display: flex;
-      justify-content: space-around;
+      display: block;
+      align-items: stretch;
       h3,
       h4,
       h5 {
@@ -69,7 +70,7 @@ footer {
   }
   .menu-list,
   .menu-title {
-    padding: 0 3rem;
+    padding: 0 2rem;
   }
   .menu-list {
     div {
