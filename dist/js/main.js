@@ -56,3 +56,26 @@ window.onscroll = function() {
 // navItems.forEach(item =>
 //   item.addEventListener("click", changeSectionIndicator)
 // );
+
+// Show/Hide scroll arrow
+function scrollArrow() {
+  let scrollHeight = document.body.scrollHeight;
+  let clientHeight = document.body.clientHeight;
+  if (scrollHeight > clientHeight) {
+    let windowScroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
+    let height = scrollHeight - clientHeight;
+    const arrow = document.getElementById("scroll-arrow");
+    let opacity = 1 - windowScroll / height;
+    if (opacity > 0.3) {
+      arrow.style.opacity = opacity;
+    } else {
+      arrow.style.opacity = 0;
+    }
+  }
+}
+
+scrollArrow();
+window.onscroll = function() {
+  scrollArrow();
+};

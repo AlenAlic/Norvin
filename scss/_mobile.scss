@@ -29,15 +29,15 @@ $padding-unit: 24px;
   }
 
   .contact {
-    grid-template-columns: repeat(2, 1fr);
-    font-size: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+    font-size: 2rem;
 
     .mail,
     .phone {
       margin-top: 25vh;
       a {
         i {
-          font-size: 12rem;
+          font-size: 10rem;
         }
       }
     }
