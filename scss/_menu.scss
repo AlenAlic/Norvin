@@ -55,14 +55,15 @@ $menu-height: $base-unit * 6;
   &-nav {
     z-index: -1;
     position: relative;
-    height: 0;
+    // height: 0;
     display: flex;
     flex-direction: column;
     justify-content: stretch;
     align-items: center;
-    transform: translate3d(0, -600px, 0);
+    transform: translate3d(0, -500px, 0);
     @include easeIn;
-    background: none;
+    // background: none;
+    background: $personal-trainer-color;
     box-shadow: none;
 
     .nav-link {
@@ -74,16 +75,15 @@ $menu-height: $base-unit * 6;
       }
     }
 
+    &.white {
+      background: $salsa-trainer-color;
+    }
+
     &.show {
       height: auto;
       transform: translate3d(0, 0, 0);
-      background: $personal-trainer-color;
       @include easeOut;
       box-shadow: 0px 3px 15px 0px $primary-color;
-
-      &.white {
-        background: $salsa-trainer-color;
-      }
     }
 
     .nav-item {

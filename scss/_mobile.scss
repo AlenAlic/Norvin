@@ -7,6 +7,12 @@ $padding-unit: 24px;
   padding-right: $padding-unit;
 }
 
+@include mediaXxl {
+  .container {
+    max-width: 1200px;
+  }
+}
+
 @include mediaXl {
   .container {
     max-width: 1000px;
@@ -54,11 +60,14 @@ $padding-unit: 24px;
       }
     }
   }
-}
 
-@include mediaXxl {
-  .container {
-    max-width: 1200px;
+  .quote_block {
+    max-width: 67%;
+    align-items: center;
+  }
+
+  .list_block {
+    max-width: 40%;
   }
 }
 
@@ -92,6 +101,15 @@ $padding-unit: 24px;
         flex-wrap: wrap;
       }
     }
+  }
+
+  .quote_block {
+    max-width: 67%;
+    align-items: center;
+  }
+
+  .list_block {
+    max-width: 40%;
   }
 }
 
@@ -127,5 +145,19 @@ $padding-unit: 24px;
         flex-wrap: wrap;
       }
     }
+  }
+
+  .price_list {
+    grid-template-columns: 100%;
+    grid-row-gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@include mediaSm {
+  .price_list {
+    grid-template-columns: 100%;
+    grid-row-gap: 0.5rem;
+    margin-bottom: 2rem;
   }
 }
