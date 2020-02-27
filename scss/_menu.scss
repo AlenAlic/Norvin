@@ -3,6 +3,10 @@
 $base-unit: 12px;
 $menu-height: $base-unit * 6;
 
+header {
+  z-index: 1000;
+}
+
 .menu-btn {
   position: absolute;
   z-index: 100;

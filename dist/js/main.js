@@ -67,10 +67,12 @@ function scrollArrow() {
     let height = scrollHeight - clientHeight;
     const arrow = document.getElementById("scroll-arrow");
     let opacity = 1 - windowScroll / height;
-    if (opacity > 0.3) {
-      arrow.style.opacity = opacity;
-    } else {
-      arrow.style.opacity = 0;
+    if (arrow) {
+      if (opacity > 0.3) {
+        arrow.style.opacity = opacity;
+      } else {
+        arrow.style.opacity = 0;
+      }
     }
   }
 }
