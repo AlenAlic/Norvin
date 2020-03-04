@@ -282,6 +282,9 @@ h3 {
   font-weight: 500;
   margin-top: 4rem; }
 
+.text--center {
+  text-align: center; }
+
 header {
   position: fixed;
   height: 72px;
@@ -365,7 +368,8 @@ a {
   border-color: #f26725;
   border-radius: 1rem;
   border-width: thick;
-  padding: 1rem; }
+  padding: 1rem;
+  background-color: #fbd6c4; }
 
 .video div {
   margin: 0 auto;

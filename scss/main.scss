@@ -32,6 +32,10 @@ h3 {
   margin-top: 4rem;
 }
 
+.text--center {
+  text-align: center;
+}
+
 header {
   position: fixed;
   height: $menu-height;
@@ -160,6 +164,7 @@ a {
   border-radius: 1rem;
   border-width: thick;
   padding: 1rem;
+  background-color: lighten($color: $primary-color, $amount: 33);
 }
 
 .video {
