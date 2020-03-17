@@ -158,9 +158,12 @@ $padding-unit: 24px;
     grid-row-gap: 0.5rem;
     margin-bottom: 2rem;
   }
-  .salsa_lessons {
-    grid-template-columns: 100%;
-    grid-row-gap: 0.5rem;
+
+  .list_block {
+    max-width: 60%;
+    &.wide {
+      max-width: 75%;
+    }
   }
 }
 
@@ -170,8 +173,11 @@ $padding-unit: 24px;
     grid-row-gap: 0.5rem;
     margin-bottom: 2rem;
   }
-  .salsa_lessons {
-    grid-template-columns: 100%;
-    grid-row-gap: 0.5rem;
+
+  .list_block {
+    max-width: 80%;
+    &.wide {
+      max-width: 100%;
+    }
   }
 }
