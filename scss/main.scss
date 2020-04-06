@@ -136,11 +136,7 @@ footer {
 
 a {
   text-decoration: none;
-  color: set-text-color($personal-trainer-color);
-
-  &.white {
-    color: set-text-color($salsa-trainer-color);
-  }
+  color: $primary-color-dark;
 
   &:hover {
     @include easeOut;
@@ -150,6 +146,13 @@ a {
   &.salsa {
     &:hover {
       color: $primary-color-salsa;
+    }
+  }
+
+  &.inverted {
+    color: $primary-color;
+    &:hover {
+      color: $primary-color-dark;
     }
   }
 
@@ -223,6 +226,9 @@ a {
   text-align: left;
   align-self: start;
   margin-bottom: 1rem;
+  &.large {
+    margin-bottom: 2rem;
+  }
   h2,
   p {
     margin: 0;

@@ -352,14 +352,16 @@ footer {
 
 a {
   text-decoration: none;
-  color: white; }
-  a.white {
-    color: black; }
+  color: #f58f00; }
   a:hover {
     transition: all 0.3s ease-out;
     color: #f26725; }
   a.salsa:hover {
     color: #e05424; }
+  a.inverted {
+    color: #f26725; }
+    a.inverted:hover {
+      color: #f58f00; }
   a.underline {
     text-decoration: underline; }
 
@@ -413,6 +415,8 @@ a {
   text-align: left;
   align-self: start;
   margin-bottom: 1rem; }
+  .price_list.large {
+    margin-bottom: 2rem; }
   .price_list h2,
   .price_list p {
     margin: 0; }
