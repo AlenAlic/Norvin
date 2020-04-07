@@ -818,7 +818,11 @@ a {
   .list_block {
     max-width: 60%; }
     .list_block.wide {
-      max-width: 75%; } }
+      max-width: 75%; }
+  .quote_block {
+    display: block; }
+    .quote_block img {
+      float: left; } }
 
 @media screen and (max-width: 500px) {
   .price_list {
@@ -828,4 +832,8 @@ a {
   .list_block {
     max-width: 80%; }
     .list_block.wide {
-      max-width: 100%; } }
+      max-width: 100%; }
+  .quote_block {
+    display: block; }
+    .quote_block img {
+      float: left; } }

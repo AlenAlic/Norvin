@@ -165,6 +165,13 @@ $padding-unit: 24px;
       max-width: 75%;
     }
   }
+
+  .quote_block {
+    display: block;
+    img {
+      float: left;
+    }
+  }
 }
 
 @include mediaSm {
@@ -178,6 +185,13 @@ $padding-unit: 24px;
     max-width: 80%;
     &.wide {
       max-width: 100%;
+    }
+  }
+
+  .quote_block {
+    display: block;
+    img {
+      float: left;
     }
   }
 }
